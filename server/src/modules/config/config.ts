@@ -14,6 +14,12 @@ export const JWT_REFRESH_CONFIG = {
   expiresIn: "7d",
 };
 
+export const COOKIE_CONFIG = {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  maxAge: 7 * 24 * 60 * 60 * 1000 - 60 * 60 * 1000, // 7 days - 1 hour
+};
+
 export const NODE_ENV = process.env.NODE_ENV as string;
 export const PORT = parseInt(process.env.PORT as string);
 
